@@ -190,7 +190,12 @@ upstream:
             name: '{{- include "janus-idp.postgresql.secretName" . }}'
       # -------------------------------------------------------
       #begin - Valores customizados  
-      # -------------------------------------------------------   
+      # -------------------------------------------------------       
+      - name: GITHUB_CLIENT_ID
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: GITHUB_CLIENT_ID
       # proxy
       - name: http_proxy
         value: 'http://10.0.230.100:8080'
