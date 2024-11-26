@@ -190,7 +190,8 @@ upstream:
             name: '{{- include "janus-idp.postgresql.secretName" . }}'
       # -------------------------------------------------------
       #begin - Valores customizados  
-      # -------------------------------------------------------       
+      # -------------------------------------------------------
+      # secrets       
       - name: GITHUB_CLIENT_ID
         valueFrom:
           secretKeyRef:

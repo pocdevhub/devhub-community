@@ -7,7 +7,7 @@ immutable: false
 data:
   app-config-extra.yaml: |
     app:
-      title: Dev Hub - Communitario - v0.1
+      title: Dev Hub - Community - v0.1
       baseUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
     backend:
       auth:

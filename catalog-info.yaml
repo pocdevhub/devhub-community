@@ -4,12 +4,12 @@ metadata:
   name: "Backstage"
   description: "Moodle for Red Hat Developer Hub"
   annotations:
-    github.com/project-slug: pocdevhub/backstage
+    github.com/project-slug: pocdevhub/devhub-community
     #backstage.io/techdocs-ref: dir:.
-    backstage.io/kubernetes-namespace: backstage
-    backstage.io/kubernetes-id: moodle
+    backstage.io/kubernetes-namespace: poc-backstage
+    backstage.io/kubernetes-id: rhdh-community-backstage
     #janus-idp.io/tekton : moodle
-    #backstage.io/kubernetes-label-selector: 'app=moodle'
+    backstage.io/kubernetes-label-selector: 'app=backstage'
   links: []
   tags:
     - moodle311
