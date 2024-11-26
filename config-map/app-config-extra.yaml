@@ -2,13 +2,13 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: app-config-extra
-  namespace: poc-developer-hub
+  namespace: poc-backstage
 immutable: false
 data:
   app-config-extra.yaml: |
     app:
-      title: Developer Hub - Poc - v0.2
-      baseUrl: https://backstage-community-poc-developer-hub.apps.k8s.dev.local
+      title: Dev Hub - Communitario - v0.1
+      baseUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
     backend:
       auth:
         externalAccess:
@@ -16,46 +16,46 @@ data:
               options:
                 subject: legacy-default-config
                 secret: "pl4s3Ch4ng3M3"
-      baseUrl: https://backstage-community-poc-developer-hub.apps.k8s.dev.local
+      baseUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
       cors:
-        origin: https://backstage-community-poc-developer-hub.apps.k8s.dev.local
+        origin: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
     integrations:
       github:
         - host: github.com
-          token: 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
+          token: ${GITHUB_TOKEN}
           apps:
-            - appId: 1050577
-              clientId: Iv23lizJb5t1o8s6pHPB
-              clientSecret: 9a1444d435c3e2f2e353928c6ec775559ee33089
-              webhookUrl: https://backstage-community-poc-developer-hub.apps.k8s.dev.local
+            - appId: 1070153
+              clientId: ${GITHUB_CLIENT_ID}
+              clientSecret: ${GITHUB_CLIENT_SECRET}
+              webhookUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
               webhookSecret: Yv3r2ZfE4dHFCjzN
               privateKey: |
                 -----BEGIN RSA PRIVATE KEY-----
-                MIIEpQIBAAKCAQEA6STqSe3XfuxayK3MXPYNVue/R8uZS6j12laWpOvxB+aSDVWL
-                5EjBseJjweIUmXv4Ar1IUA1A+q0Xo0CxNFtyUEdubXpCGbHUIdY3VFXRYrbHCLDt
-                gMqwg6bZ3QODf4T/tbRZiK88cUxlG7Qlxmr5ooXBaIGut9lMidTLm/jQc10NkRaO
-                VTtLojG7MagvrSAxKdBSDSV39ExjDTJZElLfHGC8wkqPVI3+kj73ownkDX/W8fFV
-                DErkKJmE7MksBiW54GCNqhKiU8jIKwD0Hy5hPgW4kRXhe6KMyd0jC2+i/sl+s2uo
-                a8BG/OJHXia4D3e7jovT/0CLczc5y/vxmHMFMQIDAQABAoIBAQDfj3ll2L6qQ4Qu
-                KJHtljdmXSULeE0Pwv21FxCvJlvjApKMXLqe9bFenMKhuOOd5cUFA3Ii6QKlHXOs
-                JK2HkiTEnCpkqjZWIzJSG/LEWOJGMRQb3mRv+mxWYZlJmEPw9JyrJTwxmC9ySRou
-                /Yi3gf7MfEvgpXHfc2w0QqvXbTidVQnOoEXSfAIjVrGtH2JnMYKX8PJj92J9YoTm
-                q3BHU1RcpqWNuSKcuMt5FWp8+dL9XAqXljtlO3kVPheDrgcX0jF2ponJdmjdWyjk
-                OxUFg0mcnA3EjEkQWeHA992dWkwilynOMplpSquauWLqjaLH9MT8So0AaTlQLiwU
-                lX4V0rnRAoGBAPaopYNhMwbdoGEtuw1JAkmrHz11MvoPD8cwndZ+FOBS28nrBcN7
-                ReGOhi+Y1CQBSeWeBbFBG8IYJpzdgUE2jnZ14OlouIAbPSaLkL+VOH2rfTG12o4r
-                DKwK9DRP71SnHELaVFtmcW8GTL0HwxFfhLWyz29WxQieaEGdLh+bf0iNAoGBAPH5
-                Pro15lUnmlJcmNk3yraTpPOsvn1nSrgBdA9EdAuvNjIyX3s6VJ1ToHSRvzk85ABk
-                xyXvwwu4sqGo78KrehMUK4C3gNT7QeKZk5FH+GTMBJJfyr5lZNOlQGZCqTYpa1Qp
-                gMslMB/rIAFHqz+FFY0jxaSr6VulL4OF1tDzvQA1AoGBAOj3cpR7GqHSc+c1NSWg
-                HmwMFw6KAmLSFPnyvjFXlkolmHfG5gOzC9a1MaIE++Eh4nTgYsn/D8Or4dRpFerN
-                J5NVVN+/y/sbPw+H5Gg+/UMc1Ls94rZCjM517h72nLrct0GhSumlAWB2l8Y2bZSc
-                HhErWOb1ElZIn3nRhj3ONVMFAoGBAJoKexVeJNDHEmYmTqPR8bnDSjpaGTaKIDX9
-                rt3dTSb3FsBj8wbmvmEdkMNE2YBdtCRQA7ux4/A9V3K0slWyhldI+tzJdTmg7nOM
-                IzZUo9u/SZXJZ69HqyVVSScQftpdCdedSEGK3hUjwM8vyeP5HBwqzrKjQj62bQYE
-                mRmSYRqVAoGAe/n4tR2zso4BZ7tjORo6SX21bdxQYhfikw0Xb9+DIMduCJBdLYf8
-                xaC+8JCvTVk5wg4pPrEVg81lnjf7dWAE1C876mzyi6v9W8mCl6w9JI9oPv2AenNk
-                ore6MMuCUNdqMj2WlURnsf15zL/Fs0mHOEifevjrieUQmGFV08wgWWU=
+                MIIEpAIBAAKCAQEApmcpY7U3tiyDczNPIP7My68QboCGtxyPGs+sMYR0A1Nog++F
+                5ECaQJt4A05J5AhUFwvHKoS0RtI2MiPOS25WFWj1zuTjnFQN024/O4eNYJfan7lm
+                GFr4qQigSoEnb5BOQiF9dMB1kHMQtW9POBk57YUL96sBp+GTroixFRWgA0eY+9s1
+                EfSvxL5RdGKs+JYXY5QoMJzsXI+Ekc4vHtLALIGfEJhUPAjCryC7Hhmwwpipihg6
+                EYOTTq/6Hf0YoJ+1UCIKpdk5Ehsq+5+RAs2U/EP1Bpo1vuF4MN516f5EwsyHlMSX
+                KJAUa9Db7r5pitNC0y0SW5B9TmPoY3ghg/W+JQIDAQABAoIBAANDQI+A7R+4TbeD
+                iQinllJkE1lnUbzjZXbsHX83DqNGDmWP27s2/Q9JPRgrf81l0GhHRddylKpS0tc2
+                1oOqHSv8S92LpV7aUw8TOVAsfzwmnhXFp9fQaNG/pozvbVuFo9MuHuycHXIAn5I/
+                JXl/HSCoHCz2AGlPRfsFGRvFucZ2p9NQ205azv2BimLTPGnTxoejuyRbNdSIc6Kh
+                lpXc5zY1vc0Z8SCU0tIoxuLww2nQEJCABDOYvPdYK8S84ilhcChnhK1ZN2Jnvz5U
+                T286WSMuODqaIZzqT8fYkALy4RKOygy1SW+r0isA8LX0YY9Uan6WUJBCqqbxuhjI
+                XwEj210CgYEA1KCt8q7nTD7P9v8574s+ibI+9N9h7kFZtR30btorP8QdgxFp2Nqb
+                HjWPwYplauUBT8Uz2oDss1B4ZZb6HpAsxcr6zx8tbaLheQMqrFVgwEfp9In/CeO7
+                ++ok6imERm+MbDVNKlQxPYN9WUOcBl4XR8hentB/DlU71nLsqfSWywcCgYEAyFim
+                diR5TFnMG9RDY13D2+d4G5evTQycYEUwK48Q4AL/Ggkxn7vigWpObPuRia95ymqH
+                ZWtYzgvvo3y4r+axL01viKbEWicUtb2Ta9eBFCaiPOLvMzfMsW/lNDEPAdL6qB+m
+                A6YZitb46+Dn6bUBvkdoa3W0nRIu1d9RiTBepnMCgYAwjw2KyeTq5cFq4Djj+wHq
+                QnncRJPB7MzG7zNeiZas9mXjA/wPWUVprcPJ6Ihm1CvrgtbnxN/Jx8vnL4apqjV/
+                am7DFJS0YClsEIwTVWBGKWZFwaosIQVSb9PEYnzh9SG1qKqZyyZ/rOLYmvcsARsB
+                +sGZNXZ+2HpU7GQeIEy7ywKBgQDB/NyJbn2oyRYSKDBr6WF47yJkDTZnM3vC15tx
+                weBEF4Ks0hQjp4gFaUqwydG88JTLwuSA9jURpYsO0Pf/Ei+kLqV9OoTLCiZKZ1p0
+                REGuok3bCJ02CaSAdmkHZS0zxfaAjcxwogb/YXG665WCvIoIlRntWxZcNDv3SHmp
+                jZVIMwKBgQCS3PJ1QEj8wgE46eZg95zPlFdrRaPAm02tIV2CzG4bQ37btE+4B6D9
+                f8id58hPQiM0xj8nbB2BD/yIgJlEybpHBU5J6air5oZZq+Lni+CseIs4cuI0m5Tw
+                mlEg7OKgQQAjTlkAjk4A1oUr1kY4oFMjQ6IN0wnWaizWEFXG0mNgbw==
                 -----END RSA PRIVATE KEY-----
     signInPage: github
     dangerouslyAllowSignInWithoutUserInCatalog: true
@@ -67,8 +67,8 @@ data:
       providers:
         github:
           development:
-            clientId: Ov23liVbr04gocn6IYx5
-            clientSecret: e905ebe1018132fe5088c1fa1f0d31cdc5d4c4e3
+            clientId: ${GITHUB_CLIENT_ID}
+            clientSecret: ${GITHUB_CLIENT_SECRET}
         guest:
           dangerouslyAllowOutsideDevelopment: true
           development:
