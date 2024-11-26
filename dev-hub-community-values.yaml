@@ -196,6 +196,46 @@ upstream:
           secretKeyRef:
             name: app-secrets-devhub
             key: GITHUB_CLIENT_ID
+      - name: GITHUB_CLIENT_SECRET
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: GITHUB_CLIENT_SECRET
+      - name: GITHUB_TOKEN
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: GITHUB_TOKEN
+      - name: GITHUB_WEBHOOKSECRET
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: GITHUB_WEBHOOKSECRET
+      - name: GITHUB_PRIVATE_KEY
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: GITHUB_PRIVATE_KEY
+      - name: ARGOCD_USERNAME
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: ARGOCD_USERNAME
+      - name: ARGOCD_PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: ARGOCD_PASSWORD
+      - name: OPENSHIFT_CLUSTER_NAME
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: OPENSHIFT_CLUSTER_NAME
+      - name: OPENSHIFT_CLUSTER_URL
+        valueFrom:
+          secretKeyRef:
+            name: app-secrets-devhub
+            key: OPENSHIFT_CLUSTER_URL
       # proxy
       - name: http_proxy
         value: 'http://10.0.230.100:8080'
