@@ -29,34 +29,7 @@ data:
               clientSecret: ${GITHUB_CLIENT_SECRET}
               webhookUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
               webhookSecret: Yv3r2ZfE4dHFCjzN
-              privateKey: |
-                -----BEGIN RSA PRIVATE KEY-----
-                MIIEpAIBAAKCAQEApmcpY7U3tiyDczNPIP7My68QboCGtxyPGs+sMYR0A1Nog++F
-                5ECaQJt4A05J5AhUFwvHKoS0RtI2MiPOS25WFWj1zuTjnFQN024/O4eNYJfan7lm
-                GFr4qQigSoEnb5BOQiF9dMB1kHMQtW9POBk57YUL96sBp+GTroixFRWgA0eY+9s1
-                EfSvxL5RdGKs+JYXY5QoMJzsXI+Ekc4vHtLALIGfEJhUPAjCryC7Hhmwwpipihg6
-                EYOTTq/6Hf0YoJ+1UCIKpdk5Ehsq+5+RAs2U/EP1Bpo1vuF4MN516f5EwsyHlMSX
-                KJAUa9Db7r5pitNC0y0SW5B9TmPoY3ghg/W+JQIDAQABAoIBAANDQI+A7R+4TbeD
-                iQinllJkE1lnUbzjZXbsHX83DqNGDmWP27s2/Q9JPRgrf81l0GhHRddylKpS0tc2
-                1oOqHSv8S92LpV7aUw8TOVAsfzwmnhXFp9fQaNG/pozvbVuFo9MuHuycHXIAn5I/
-                JXl/HSCoHCz2AGlPRfsFGRvFucZ2p9NQ205azv2BimLTPGnTxoejuyRbNdSIc6Kh
-                lpXc5zY1vc0Z8SCU0tIoxuLww2nQEJCABDOYvPdYK8S84ilhcChnhK1ZN2Jnvz5U
-                T286WSMuODqaIZzqT8fYkALy4RKOygy1SW+r0isA8LX0YY9Uan6WUJBCqqbxuhjI
-                XwEj210CgYEA1KCt8q7nTD7P9v8574s+ibI+9N9h7kFZtR30btorP8QdgxFp2Nqb
-                HjWPwYplauUBT8Uz2oDss1B4ZZb6HpAsxcr6zx8tbaLheQMqrFVgwEfp9In/CeO7
-                ++ok6imERm+MbDVNKlQxPYN9WUOcBl4XR8hentB/DlU71nLsqfSWywcCgYEAyFim
-                diR5TFnMG9RDY13D2+d4G5evTQycYEUwK48Q4AL/Ggkxn7vigWpObPuRia95ymqH
-                ZWtYzgvvo3y4r+axL01viKbEWicUtb2Ta9eBFCaiPOLvMzfMsW/lNDEPAdL6qB+m
-                A6YZitb46+Dn6bUBvkdoa3W0nRIu1d9RiTBepnMCgYAwjw2KyeTq5cFq4Djj+wHq
-                QnncRJPB7MzG7zNeiZas9mXjA/wPWUVprcPJ6Ihm1CvrgtbnxN/Jx8vnL4apqjV/
-                am7DFJS0YClsEIwTVWBGKWZFwaosIQVSb9PEYnzh9SG1qKqZyyZ/rOLYmvcsARsB
-                +sGZNXZ+2HpU7GQeIEy7ywKBgQDB/NyJbn2oyRYSKDBr6WF47yJkDTZnM3vC15tx
-                weBEF4Ks0hQjp4gFaUqwydG88JTLwuSA9jURpYsO0Pf/Ei+kLqV9OoTLCiZKZ1p0
-                REGuok3bCJ02CaSAdmkHZS0zxfaAjcxwogb/YXG665WCvIoIlRntWxZcNDv3SHmp
-                jZVIMwKBgQCS3PJ1QEj8wgE46eZg95zPlFdrRaPAm02tIV2CzG4bQ37btE+4B6D9
-                f8id58hPQiM0xj8nbB2BD/yIgJlEybpHBU5J6air5oZZq+Lni+CseIs4cuI0m5Tw
-                mlEg7OKgQQAjTlkAjk4A1oUr1kY4oFMjQ6IN0wnWaizWEFXG0mNgbw==
-                -----END RSA PRIVATE KEY-----
+              privateKey: ${GITHUB_PIVATE_KEY}
     signInPage: github
     dangerouslyAllowSignInWithoutUserInCatalog: true
 
