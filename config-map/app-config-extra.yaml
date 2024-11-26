@@ -28,7 +28,7 @@ data:
               clientId: ${GITHUB_CLIENT_ID}
               clientSecret: ${GITHUB_CLIENT_SECRET}
               webhookUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
-              webhookSecret: Yv3r2ZfE4dHFCjzN
+              webhookSecret: ${GITHUB_WEBHOOKSECRET}
               privateKey: ${GITHUB_PIVATE_KEY}
     signInPage: github
     dangerouslyAllowSignInWithoutUserInCatalog: true
@@ -54,30 +54,18 @@ data:
       clusterLocatorMethods:
         - type: "config"
           clusters:
-            - name: "openshift-cluster"
-              url: "https://api.apps.k8s.dev.local:6443"  # URL do servidor API do OpenShift
-              serviceAccountToken:  
-                $env: eyJhbGciOiJSUzI1NiIsImtpZCI6Ik01b3ZYTWZZX3VHYmNHMTVTM0lib19UMm4zY3ZoUGtWX1hCLW1IWE5nUzgifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjIl0sImV4cCI6MTczMDgyNDk1MCwiaWF0IjoxNzMwODIxMzUwLCJpc3MiOiJodHRwczovL2t1YmVybmV0ZXMuZGVmYXVsdC5zdmMiLCJrdWJlcm5ldGVzLmlvIjp7Im5hbWVzcGFjZSI6InBvYy1kZXZlbG9wZXItaHViIiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRldmVsb3Blci1odWItc2EiLCJ1aWQiOiIzZGJlNWVhZC05NmUwLTQ3ZjYtODhkYy0yZjVjNDVmYTgyOTIifX0sIm5iZiI6MTczMDgyMTM1MCwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnBvYy1kZXZlbG9wZXItaHViOmRldmVsb3Blci1odWItc2EifQ.QaNT6C09Hk2H1tB-GUKiGaJzjsLhIMpp3c2a6V2pDSL75bOKvas_kAff_pn9newSxh3xE5BglmuCI-tvgXk3glb-r87HWekx4L_wKTuX-OGdU9rpUlojSN7Yuo7C-whvSpYoHhKy2M89sFbUzGQNc41RCbvXZHyK_CpO18-lhAcr9tKHRWljqOW-rSAljCAg8pBJT-OqNLjMGibo5fQP71rRcarEC6e6XcbZnyOJOhEStYwWeE8aTY1Hqpc6ckggiQ3EbfJt2b58S_g05pBGGNHDTNZveLH801uyZTftfqJwRrJ_NgezUuU04E-l3ukZRGGKtWLpx9p0L_9I60OhYn12Xg21zlESdIZpSMSfocj1CMmGh0RTbY9t2NpkFsKJBUEtfzJ1cWRqFAO3lLC-PTuH_fUHpksOXS-Y4681_nqyYNpqbDyPQJbCvdTTPQb0iDdb_IGaNizZyA9ggTywbbQWBb1UrW_grChEwDCUW2lyisMXv_L-FEmyz84bodnbarTAgGFIocXCURw5P_nebuLiaeoisQZzEo3kFqRDzOV-QyGZAK6Dk56OGwFKtGVAbxd3HWK_oTxehL8hvqw8Brky19nI3sHUE6gBIuNVNZfTqER3MDSK4Ao5b0Q_lNEyPBzIb_TXsGlYQFLDYe0WTFhDyt5oSVhyava9HVljjWI
+            - name: ${OPENSHIFT_CLUSTER_NAME}
+              url: ${OPENSHIFT_CLUSTER_URL}  # URL do servidor API do OpenShift
               authProvider: "serviceAccount"  # Indica que está usando uma ServiceAccount
               #serviceAccountToken: eyJhbGciOiJSUzI1NiIsImtpZCI6Ik01b3ZYTWZZX3VHYmNHMTVTM0lib19UMm4zY3ZoUGtWX1hCLW1IWE5nUzgifQ.eyJhdWQiOlsiaHR0cHM6Ly9rdWJlcm5ldGVzLmRlZmF1bHQuc3ZjIl0sImV4cCI6MTczMDgyNDk1MCwiaWF0IjoxNzMwODIxMzUwLCJpc3MiOiJodHRwczovL2t1YmVybmV0ZXMuZGVmYXVsdC5zdmMiLCJrdWJlcm5ldGVzLmlvIjp7Im5hbWVzcGFjZSI6InBvYy1kZXZlbG9wZXItaHViIiwic2VydmljZWFjY291bnQiOnsibmFtZSI6ImRldmVsb3Blci1odWItc2EiLCJ1aWQiOiIzZGJlNWVhZC05NmUwLTQ3ZjYtODhkYy0yZjVjNDVmYTgyOTIifX0sIm5iZiI6MTczMDgyMTM1MCwic3ViIjoic3lzdGVtOnNlcnZpY2VhY2NvdW50OnBvYy1kZXZlbG9wZXItaHViOmRldmVsb3Blci1odWItc2EifQ.QaNT6C09Hk2H1tB-GUKiGaJzjsLhIMpp3c2a6V2pDSL75bOKvas_kAff_pn9newSxh3xE5BglmuCI-tvgXk3glb-r87HWekx4L_wKTuX-OGdU9rpUlojSN7Yuo7C-whvSpYoHhKy2M89sFbUzGQNc41RCbvXZHyK_CpO18-lhAcr9tKHRWljqOW-rSAljCAg8pBJT-OqNLjMGibo5fQP71rRcarEC6e6XcbZnyOJOhEStYwWeE8aTY1Hqpc6ckggiQ3EbfJt2b58S_g05pBGGNHDTNZveLH801uyZTftfqJwRrJ_NgezUuU04E-l3ukZRGGKtWLpx9p0L_9I60OhYn12Xg21zlESdIZpSMSfocj1CMmGh0RTbY9t2NpkFsKJBUEtfzJ1cWRqFAO3lLC-PTuH_fUHpksOXS-Y4681_nqyYNpqbDyPQJbCvdTTPQb0iDdb_IGaNizZyA9ggTywbbQWBb1UrW_grChEwDCUW2lyisMXv_L-FEmyz84bodnbarTAgGFIocXCURw5P_nebuLiaeoisQZzEo3kFqRDzOV-QyGZAK6Dk56OGwFKtGVAbxd3HWK_oTxehL8hvqw8Brky19nI3sHUE6gBIuNVNZfTqER3MDSK4Ao5b0Q_lNEyPBzIb_TXsGlYQFLDYe0WTFhDyt5oSVhyava9HVljjWI
               # Usar em desenvolvimento; desativar em produção
               skipTLSVerify: true
     
-    catalog:
-      providers:
-        threeScaleApiEntity:
-          dev:
-            baseUrl: https://3scale-admin.apps.k8s.dev.local
-            accessToken: c72591af87d56780aeffae150c8eac10c0a623a7b87956aa85e1680df6e6cd3f
-            schedule: # optional; same options as in TaskScheduleDefinition
-              # supports cron, ISO duration, "human duration" as used in code
-              frequency: { minutes: 30 }
-              # supports ISO duration, "human duration" as used in code
-              timeout: { minutes: 3 }
-              
-    permission:
-      enabled: true
-      rbac:
-        admin:
-          users:
-            - name: user:default/<your_policy_administrator_name>   # administrador
+    argocd:
+      appLocatorMethods:
+        - type: 'config'
+          instances:
+            - name: ktoolsArgoInstance
+              url: https://argocd-server-poc-ktools.apps.k8s.dev.local
+              username: ${ARGOCD_USERNAME}
+              password: ${ARGOCD_PASSWORD}
