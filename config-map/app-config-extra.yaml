@@ -29,7 +29,7 @@ data:
               clientSecret: ${GITHUB_CLIENT_SECRET}
               webhookUrl: https://rhdh-community-backstage-poc-backstage.apps.k8s.dev.local
               webhookSecret: ${GITHUB_WEBHOOKSECRET}
-              privateKey: ${GITHUB_PIVATE_KEY}
+              privateKey: ${GITHUB_PRIVATE_KEY}
     signInPage: github
     dangerouslyAllowSignInWithoutUserInCatalog: true
 
