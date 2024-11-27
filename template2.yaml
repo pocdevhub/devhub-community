@@ -1,0 +1,63 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: python-basic-api-template
+  title: Python API Template
+  description: A simple Python Flask API for Backstage
+  tags:
+    - python
+    - flask
+    - api
+    - example
+spec:
+  owner: backstage-team
+  system: my-system
+  type: service
+
+  parameters:
+    - title: Application Details
+      required:
+        - appName
+        - description
+        - repoUrl
+      properties:
+        appName:
+          title: Application Name
+          type: string
+          description: The name of the application
+          default: my-python-api
+        description:
+          title: Description
+          type: string
+          description: A short description of the service
+          default: A simple API built with Flask.
+        repoUrl:
+          title: Git Repository URL
+          type: string
+          description: The URL of the Git repository where the source code will be hosted.
+          default: https://github.com/your-org/my-python-api
+
+  steps:
+    - id: generate-source-code
+      name: Generating Source Code
+      action: fetch:template
+      input:
+        url: https://github.com/your-org/python-flask-template
+        values:
+          appName: ${{ parameters.appName }}
+          description: ${{ parameters.description }}
+
+    - id: publish-to-repo
+      name: Publish to GitHub
+      action: publish:github
+      input:
+        description: ${{ parameters.description }}
+        repoUrl: ${{ parameters.repoUrl }}
+        defaultBranch: main
+        sourcePath: ./generated
+        repoVisibility: public
+
+  output:
+    links:
+      - title: Open the Repository
+        url: ${{ steps.publish-to-repo.output.remoteUrl }}
