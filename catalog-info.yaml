@@ -18,3 +18,24 @@ spec:
   type: service
   lifecycle: experimental
   owner: "group:default/tbd"
+
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "rhdh-community-backstage"
+  description: "Moodle for Red Hat Developer Hub"
+  annotations:
+    github.com/project-slug: pocdevhub/devhub-community
+    #backstage.io/techdocs-ref: dir:.
+    backstage.io/kubernetes-namespace: poc-backstage
+    backstage.io/kubernetes-id: rhdh-community-backstage
+    #janus-idp.io/tekton : moodle
+    backstage.io/kubernetes-label-selector: 'app=backstage'
+  links: []
+  tags:
+    - moodle311
+    - dev      
+spec:
+  type: service
+  lifecycle: production
+  owner: "group:default/tbd"
