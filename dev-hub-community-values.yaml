@@ -170,7 +170,7 @@ upstream:
     # -------------------------------------------------------
     #begin - Valores customizados  
     # -------------------------------------------------------   
-    serviceAccountName: backstage-sa
+    #serviceAccountName: backstage-sa
     extraEnvVarsSecrets:
       - app-secrets-devhub
     extraAppConfig:
