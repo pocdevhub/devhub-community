@@ -354,6 +354,16 @@ upstream:
   ingress:
     host: "{{ .Values.global.host }}"
 
+# -------------------------------------------------------
+# begin - Valores customizados  
+# -------------------------------------------------------  
+serviceAccount:
+  create: false
+  name: "backstage-sa"
+# -------------------------------------------------------
+# end - Valores customizados  
+# -------------------------------------------------------  
+
 # -- OpenShift Route parameters
 route:
   # -- Route specific annotations
