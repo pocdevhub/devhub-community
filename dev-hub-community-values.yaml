@@ -18,70 +18,9 @@ global:
     #plugins: []
     plugins:
       - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-analytics-provider-segment'
-        disabled: true #https://github.com/redhat-developer/rhdh-chart/blob/main/charts/backstage/README.md
-      - package: './dynamic-plugins/dist/backstage-plugin-catalog-backend-module-github-dynamic'
-        disabled: false
-        pluginConfig:
-          catalog:
-            providers:
-              github:
-                organization: "pocdevhub"
-                schedule:
-                  frequency: { minutes: 1 }
-                  timeout: { minutes: 1 }
-                  initialDelay: { seconds: 100 }
-      - package: './dynamic-plugins/dist/backstage-plugin-scaffolder-backend-module-github-dynamic'    
-        disabled: false
-      - package: './dynamic-plugins/dist/backstage-plugin-scaffolder-backend-module-gitlab-dynamic'
-        disabled: false
-      # - package: './dynamic-plugins/dist/immobiliarelabs-backstage-plugin-gitlab-backend-dynamic'
-      #   disabled: false
-      # - package: './dynamic-plugins/dist/immobiliarelabs-backstage-plugin-gitlab'
-      #   disabled: false
-      # - package: './dynamic-plugins/dist/backstage-plugin-catalog-backend-module-gitlab-org-dynamic'
-      #   disabled: false
-      # - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
-      #   disabled: false
-      # - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-quay'
-      #   disabled: false
-      # integrate 3scale api management
-      - package: './dynamic-plugins/dist/backstage-community-plugin-3scale-backend-dynamic'
-        disabled: false        
-      #- package: './dynamic-plugins/dist/janus-idp-backstage-plugin-keycloak-backend-dynamic'
+        disabled: true #https://github.com/redhat-developer/rhdh-chart/blob/main/charts/backstage/README.md-plugins/dist/janus-idp-backstage-plugin-keycloak-backend-dynamic'
       #  disabled: false
       - package: './dynamic-plugins/dist/roadiehq-scaffolder-backend-argocd-dynamic'
-        disabled: false
-        #to create the Argo CD Application from the template
-      - package: './dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd-backend-dynamic'
-        disabled: false
-      - disabled: false
-        package: './dynamic-plugins/dist/backstage-community-plugin-redhat-argocd'
-        disabled: false
-      #- package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
-      #  disabled: false
-      #----
-      # https://docs.redhat.com/en/documentation/red_hat_plug-ins_for_backstage/2.0/html/topology_plugin_for_backstage/topology-plugin-for-backstage#for-administrators
-      #--
-      - package: './dynamic-plugins/dist/backstage-plugin-kubernetes'
-        disabled: false
-      - package: './dynamic-plugins/dist/backstage-plugin-kubernetes-backend-dynamic'
-        disabled: false 
-      - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-topology'
-        disabled: false
-      # https://docs.redhat.com/en/documentation/red_hat_developer_hub/1.3/html/authorization/enabling-and-giving-access-to-rbac#enabling-and-giving-access-to-rbac
-      - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-rbac'
-        disabled: false
-
-      - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-security-insights
-        disabled: false
-
-      - package: ./dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd
-        disabled: false
-      - package: ./dynamic-plugins/dist/backstage-community-plugin-ocm
-        disabled: true
-      - package: ./dynamic-plugins/dist/backstage-community-plugin-ocm-backend-dynamic
-        disabled: true
-      - package: ./dynamic-plugins/dist/roadiehq-scaffolder-backend-module-utils-dynamic
         disabled: false
     # -------------------------------------------------------
     #begin - Valores customizados - Plugins  
