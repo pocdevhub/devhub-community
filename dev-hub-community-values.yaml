@@ -49,7 +49,7 @@ global:
         disabled: false
       - package: './dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd'
         disabled: false
-       - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
+      - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
          disabled: false
       #- package: './dynamic-plugins/dist/backstage-plugin-scaffolder-backend-module-gitlab-dynamic'
       #  disabled: false
