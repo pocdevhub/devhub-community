@@ -15,13 +15,7 @@ global:
     # -------------------------------------------------------
     #begin - Valores customizados - Plugins 
     # -------------------------------------------------------   
-    #plugins: []
-    plugins:
-      - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-analytics-provider-segment'
-        disabled: true #https://github.com/redhat-developer/rhdh-chart/blob/main/charts/backstage/README.md-plugins/dist/janus-idp-backstage-plugin-keycloak-backend-dynamic'
-      #  disabled: false
-      - package: './dynamic-plugins/dist/roadiehq-scaffolder-backend-argocd-dynamic'
-        disabled: false
+    plugins: []
     # -------------------------------------------------------
     #begin - Valores customizados - Plugins  
     # -------------------------------------------------------   
