@@ -49,6 +49,8 @@ global:
         disabled: false
       - package: './dynamic-plugins/dist/roadiehq-backstage-plugin-argo-cd'
         disabled: false
+       - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
+         disabled: false
       #- package: './dynamic-plugins/dist/backstage-plugin-scaffolder-backend-module-gitlab-dynamic'
       #  disabled: false
       # - package: './dynamic-plugins/dist/immobiliarelabs-backstage-plugin-gitlab-backend-dynamic'
@@ -57,16 +59,12 @@ global:
       #   disabled: false
       # - package: './dynamic-plugins/dist/backstage-plugin-catalog-backend-module-gitlab-org-dynamic'
       #   disabled: false
-      # - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
-      #   disabled: false
       # - package: './dynamic-plugins/dist/janus-idp-backstage-plugin-quay'
       #   disabled: false
       # integrate 3scale api management
       #- package: './dynamic-plugins/dist/backstage-community-plugin-3scale-backend-dynamic'
       #  disabled: false        
       #- package: './dynamic-plugins/dist/janus-idp-backstage-plugin-keycloak-backend-dynamic'
-      #  disabled: false
-      #- package: './dynamic-plugins/dist/janus-idp-backstage-plugin-tekton'
       #  disabled: false
       #----
       # https://docs.redhat.com/en/documentation/red_hat_developer_hub/1.3/html/authorization/enabling-and-giving-access-to-rbac#enabling-and-giving-access-to-rbac
